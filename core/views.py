@@ -13,7 +13,8 @@ def upload_file(request):
         return render(request, "core/uploadfile.html")
     elif request.method == "POST":
         print(request.FILES)
-        # get file path
-        file_path = request.FILES["file"].name
-        pd.read_excel(file_path, index_col=0)
-        return redirect("upload")
+        df = pd.read_excel(request.FILES["file"])
+        df.rename(columns={"Unnamed: 0": "Index"}, inplace=True)
+        return render(
+            request, "core/uploadfile.html", {"data": df.to_html(index=False)}
+        )
