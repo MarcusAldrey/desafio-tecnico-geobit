@@ -16,4 +16,5 @@ class PersonSerializer(serializers.ModelSerializer):
             "district",
             "state",
             "number",
+            "city",
         )

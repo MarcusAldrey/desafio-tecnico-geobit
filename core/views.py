@@ -43,6 +43,7 @@ def upload_file(request):
             person.district = row["bairro"]
             person.state = row["estado"]
             person.number = row["numero"]
+            person.city = row["cidade"]
             person.save()
 
         context = {"data": df.to_html(index=False), "success": True}
