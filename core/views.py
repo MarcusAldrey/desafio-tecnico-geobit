@@ -22,7 +22,7 @@ def upload_file(request):
         # Substitui Valores NaN por strings vazias
         df = df.fillna("")
 
-        # Converte a coluna unix time para datetime
+        # Converte a coluna de unix time para datetime
         df["nascimento"] = pd.to_datetime(df["nascimento"], unit="s").apply(
             lambda x: x.to_datetime64()
         )
