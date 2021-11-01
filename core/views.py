@@ -15,7 +15,14 @@ def upload_file(request):
     if request.method == "GET":
         return render(request, "core/uploadfile.html")
     elif request.method == "POST":
-        print(request.FILES)
+
+        if not request.FILES:
+            return render(
+                request,
+                "core/uploadfile.html",
+                {"message": "Nenhum arquivo selecionado"},
+            )
+
         df = pd.read_excel(request.FILES["file"])
         df.rename(columns={"Unnamed: 0": "Index"}, inplace=True)
 
@@ -46,5 +53,8 @@ def upload_file(request):
             person.city = row["cidade"]
             person.save()
 
-        context = {"data": df.to_html(index=False), "success": True}
+        context = {
+            "data": df.to_html(index=False),
+            "message": "Os dados foram salvos com sucesso.",
+        }
         return render(request, "core/uploadfile.html", context)

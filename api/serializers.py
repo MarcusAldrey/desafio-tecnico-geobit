@@ -3,7 +3,6 @@ from .models import Person
 
 
 class PersonSerializer(serializers.ModelSerializer):
-    # create serializer
     class Meta:
         model = Person
         fields = (
