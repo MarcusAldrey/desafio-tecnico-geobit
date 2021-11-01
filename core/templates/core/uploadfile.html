@@ -1,0 +1,9 @@
+<br>
+<h1>Faça o upload do arquivo CSV</h1>
+
+<!-- input csv file django -->
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file" name="file" accept=".xls,.xlsx">
+  <input type="submit" value="Upload">
+</form>
