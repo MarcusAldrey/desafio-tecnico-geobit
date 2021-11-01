@@ -8,4 +8,11 @@
   <input type="submit" value="Upload">
 </form>
 
+{% if success %}
+<div class="alert alert-success" role="alert">
+  <h4>Os dados foram salvos com sucesso.</h4>
+  <p>API disponível em <a href="http://127.0.0.1:8000/api/v1">neste link</a></p>
+</div>
+{% endif %}
+
 {{data|safe}}

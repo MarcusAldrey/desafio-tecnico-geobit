@@ -9,17 +9,17 @@ class Person(models.Model):
     last_name = models.CharField(max_length=255)
 
     class Gender(models.TextChoices):
-        MALE = 'M'
-        FEMALE = 'F'
+        MALE = "M"
+        FEMALE = "F"
 
     gender = models.CharField(choices=Gender.choices, max_length=1)
 
     height = models.IntegerField()
     weight = models.FloatField()
     birthdate = models.DateTimeField()
-    bairro = models.CharField(max_length=255)
-    estado = models.CharField(max_length=255)
-    numero = IntegerField()
+    district = models.CharField(max_length=255)
+    state = models.CharField(max_length=255)
+    number = IntegerField()
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name or ""}'
