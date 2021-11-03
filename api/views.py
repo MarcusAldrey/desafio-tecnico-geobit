@@ -12,7 +12,7 @@ class PersonSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Person.objects.all().order_by("birthdate")
-        person_gender = self.request.query_params.get("sexo")
+        person_gender = str.upper(self.request.query_params.get("sexo"))
         if person_gender is not None:
             queryset = queryset.filter(gender=person_gender)
         return queryset
