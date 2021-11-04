@@ -1,5 +1,5 @@
 # desafio-tecnico-geobit
-Desafio técnico da empresa Geobit
+Desafio técnico da empresa Geobit. Avaliação de Python, Django e Django Rest Framework
 
 ## API
 A API está disponível `/api/v1/`
