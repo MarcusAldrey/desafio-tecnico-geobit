@@ -1,13 +1,51 @@
-# desafio-tecnico-geobit
-Desafio técnico da empresa Geobit. Avaliação de Python, Django e Django Rest Framework
+# challenge-DRF
+Technical challenge for company Geobit.
+Stack: Python, Django e Django Rest Framework
+
+## How to run project locally?
+
+Make sure you have Python 3 and pip installed.
+- Clone this repository.
+- Create virtualenv with Python 3.
+- Activate the virtualenv.
+- Install dependences.
+- Run the migrations.
+- Run the server.
+
+### On Linux
+```
+git clone https://github.com/MarcusAldrey/desafio-tecnico-geobit.git
+cd desafio-tecnico-geobit
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+### On Windows
+```
+git clone https://github.com/MarcusAldrey/desafio-tecnico-geobit.git
+cd desafio-tecnico-geobit
+python -m venv .venv
+venv/Scripts/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+## Loading data
+
+- Download data file from https://docs.google.com/spreadsheets/d/1_kn7crSdIP7fPybxAoFLx15Y1ni9zt22/edit?usp=sharing&ouid=118435021724057045240&rtpof=true&sd=true
+- go to `/upload`, click 'procurar', select the data file and click 'upload'.
 
 ## API
-A API está disponível `/api/v1/`
+The API is available at `/api/v1/`
 
-A rota `/api/v1/persons` retorna todas as pessoas no banco de dados ordenada por idade (decrescente), podendo receber o sexo como parâmetro para filtrar.
+The route `/api/v1/persons` lists all persons in database ordered by age (desc). May receive gender as a query param to filter list.
 
 Ex:
 `/api/v1/persons?sexo=F`
 `/api/v1/persons?sexo=M`
 
-A rota `/api/v1/femalemereen` retorna todas as pessoas que possuem sexo feminino e cidade Mereen.
+The route `/api/v1/femalemereen` lists persons with gender=F and city=Mereen
+
